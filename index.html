@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="app" id="app">
+        <div v-if="showBooks">
+            <ul>
+                <li v-for="book in books" :class="{fav : book.isFav}" @click="toggleFav(book)">
+                    <img :src="book.image" :alt="book.title">
+                    <p>{{book.title}}</p>
+                    <h1>{{book.author}}</h1>
+
+                </li>
+            </ul>
+        </div>
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+        </button>
+        <button> <a :href="url">google</a></button>
+        
+
+
+      
+
+
+        <!-- <div v-show="showBooks"> am showing books</div>
+
+        <div class="box" @mouseover="handelEvents">Mouse enter </div>
+        <div class="box" @mouseleave="handelEvents"> Mouse leave</div>
+        <div class="box" @dblclick="handelEvents">double click</div>
+        <div class="box"@mousemove="handelMousemove">Position -{{x}} {{y}}</div> -->
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>s
